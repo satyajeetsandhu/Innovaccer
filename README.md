@@ -15,7 +15,7 @@ Expense Manager App
     - Open innovaccer-master/innovaccer/index.html in your browser
   # Step 4
     - Inspect Element (Ctrl+Shift+i) to see if all the links and files are loaded (in console),
-    if not, please check if you haveextracted the files porperly and your are connected to internet.
+    if not, please check if you have extracted the files porperly and your are connected to internet.
     
  # Inside the app
   # Step 1
@@ -38,7 +38,7 @@ Expense Manager App
   - moment.js : Parse, validate, manipulate, and display dates and times in JavaScript.
  
  # Database
-  - Firebase : For user authentification (sign in and sign up) and realtime database.
+  - Firebase : For user authentication (sign in and sign up) and realtime database.
   
  ## Author 
   - Satyajeet Sandhu
