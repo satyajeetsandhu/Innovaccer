@@ -11,7 +11,7 @@ Expense Manager App
   
   # Step 1
     - Sign up with your email
- ![screenshot 11](https://user-images.githubusercontent.com/35889679/36457604-e2252476-16d0-11e8-8428-48c9dc888267.png)
+ ![screenshot 11](https://user-images.githubusercontent.com/35889679/36457604-e2252476-16d0-11e8-8428-48c9dc888267.png=250x250)
   # Step 2
     - Start adding expenses by clicking 'Add' button on the right hand corner
   # Step 3
