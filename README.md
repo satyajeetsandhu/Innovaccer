@@ -10,8 +10,7 @@ Expense Manager App
 # How to use 
   
   # Step 1
-    - Sign up with your email
-   <img src="https://user-images.githubusercontent.com/35889679/36457604-e2252476-16d0-11e8-8428-48c9dc888267.png" width="500"          height="300"/>
+    - Sign up with your email.
   # Step 2
     - Start adding expenses by clicking 'Add' button on the right hand corner
   # Step 3
