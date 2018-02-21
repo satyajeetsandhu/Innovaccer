@@ -7,9 +7,17 @@ Expense Manager App
   You can download or git clone all the files from this repo.
   Since i have used Google's firebase for database management, *working internet connection* is required to run the app.
   
-# How to use 
-   Run index.html in browser
-  
+  # Step 1
+    - Download or git clone this repository
+  # Step 2
+    - Extract all the files at desired location
+  # Step 3
+    - Open innovaccer-master/innovaccer/index.html in your browser
+  # Step 4
+    - Inspect Element (Ctrl+Shift+i) to see if all the links and files are loaded (in console),
+    if not, please check if you haveextracted the files porperly and your are connected to internet.
+    
+ # Inside the app
   # Step 1
     - Sign up with your email.
   # Step 2
