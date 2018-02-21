@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--favicon-->
+    <link rel="icon" href="images/favicon.png" type="image/gif" sizes="16x16">
+    <!-- font-->
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <title>Expense Manager</title>
+</head>
+
+<body onload="loader()">
+
+    <!--side bar (logIn and signUp) -->
+    <div class="container-fluid" id="page1">
+        <div class="row auth">
+            <div class="col m3 l3 z-depth-5 sidebar"></div>
+            <div class="col s12 m9 l9 right">
+                <div class="row">
+                    <div class="col m4 l4"></div>
+                    <div class="col m6 l6 s12">
+                        <div class="login-page">
+                            <div class="form z-depth-5">
+                                <div class="login-form Form">
+                                    <h4>Sign in</h4>
+                                    <div class="input-field">
+                                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                                        <label for="email">Email</label>
+                                    </div>
+                                    <div class="input-field">
+                                        <input type="password" class="form-control" id="password">
+                                        <label for="password">Password</label>
+                                    </div>
+                                    <button type="submit" class="waves-effect waves-light btn " id="quickstart-sign-in">LOGIN</button>
+                                    <small id="link">Not regestered ? <a href="#" id="link2">Sign up</a></small>
+                                </div>
+                            
+                           
+                                <div class="register-form Form">
+                                    <h4>Sign up</h4>
+                                    <div class="input-field">
+                                        <input type="text" class="form-control" id="displayName" aria-describedby="name">
+                                        <label for="name">Full Name</label>
+                                    </div>
+                                    <div class="input-field">
+                                        <input type="email" class="form-control" id="email2">
+                                        <label for="email2">Email</label>
+                                    </div>
+                                    <div class="input-field">
+                                        <input type="password" class="form-control" id="password2">
+                                        <label for="password2">Password</label>
+                                    </div>
+                                    <button type="submit" class="btn waves-effect waves-light " id="quickstart-sign-up">SIGN UP</button>
+                                    <small id="link">Already registered ? <a href="#" id="link2">Sign in</a></small>
+                                
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript : firebase, jquery, materialize, moment and main-->
+    <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

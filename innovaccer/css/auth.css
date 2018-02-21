@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+html {
+    line-height: 1.5;
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.87);
+}
+/* side bar and right side*/
+.sidebar {
+    background-color: #009688;
+    height: 100vh;
+    width: auto;
+}
+.logo{
+    background-color: #00675b;
+    margin:0px;
+    padding: 0px;
+}
+.right{
+    background-color:#f6f6f6;
+    height: 100vh;
+    width: auto;
+}
+/* login form */
+
+.form {
+    background-color: #ffffff;
+	margin-top: 30%;
+	position: relative;
+    padding: 5%;
+    max-width: 60vh;
+    padding-top: 6%
+}
+.form .login-form{
+	display: none;
+}
+
+#quickstart-sign-in,#quickstart-sign-up{
+    background-color: #00675b;
+    width: 100%;
+    text-align: center;
+    margin-top: 5%;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 2vh;
+}
+
+#link {
+    margin-top: 5%;
+    margin-left: 22%;
+    font-size: 14px;
+    display: inline;
+}
+#link2{
+    color:#00675b;
+}
+
+@media only screen and (max-width:992px) {
+    form {
+        height: auto;
+        width: auto;
+    }
+    .sidebar{
+        height: 0vh;
+        width: 0vh;
+        visibility: hidden;
+    }
+    .right{
+    background-color:#B2DFDB;
+    height:auto;
+    width: auto;
+
+}
+    .form{
+        margin:5%;
+        padding: auto;
+    }
+}
+
+.btn-floating{
+    background-color: #009688;
+}

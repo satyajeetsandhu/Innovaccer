@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--favicon-->
+    <link rel="icon" href="images/favicon.png" type="image/gif" sizes="16x16">
+    <!-- font-->
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="css/materialize.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Expense Manager</title>
+</head>
+
+<body>
+    <!--Start header -->
+    <header id="header">
+        <div class="navbar-fixed hoverable">
+            <nav class="navbar gradient-45deg-purple-deep-orange gradient-shadow">
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo"></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#!email"><span id="email" class="white-text email" style="font-size:14px;color: black !important;font-family: 'Oxygen', sans-serif;"></span></a></li>
+                        <li><a href="#!" class="waves-effect waves-block waves-light dropdown-button" data-activates="profile-dropdown"><span class="avatar"><img src="images/avatar.png"></span></a>
+                        </li>
+                    </ul>
+                    <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only ">
+            <i class="material-icons" id="side-collapse-button">menu</i>
+          </a>
+                </div>
+            </nav>
+            <ul id="profile-dropdown" class="dropdown-content ">
+                <li><a onclick="logOut()" class="grey-text text-darken-1">
+                                    <i class="material-icons">keyboard_tab</i> Log out
+                                </a></li>
+            </ul>
+        </div>
+    </header>
+    <!--Start Main-->
+    <div id="main">
+        <!-- Sidebar-->
+        <div class="wrapper">
+            <aside class="left-sidebar-nav">
+                <ul id="slide-out" class="side-nav fixed" style="background-color:#26A69A;">
+                    <li>
+                        <div class="box">
+                            <a href="#" id="logo" style="font-family: 'Oxygen', sans-serif;">Innovaccer</a>
+                        </div>
+                    </li>
+                    <li><a href="#card-stats" id="homeLink" style="color:white;margin-top: 5%;">Home</a>
+                    </li>
+                    <li><a href="#expenses" id="expensesLink" style="color:white;">Expenses</a></li>
+                    <li><a href="#reportsPage" id="reportsLink" style="color:white;">Reports</a></li>
+                    <li><a href="#" onclick="logOut()" class="text-darken-1" style="color:white;">Log out</a></li>
+                </ul>
+            </aside>
+        </div>
+
+        <!-- First time user -->
+        <section id="firstTime" class="" style="display: none">
+            <div class="container">
+                <div id="welcome">
+                    <h1 style="color: #0D47A1;">Welcome!</h1>
+                    <h5 style="color: #424242;">Click on add button and get started.</h5>
+                </div>
+            </div>
+        </section>
+
+        <!-- main content starts-->
+        <section id="main-content" style="display: none;">
+            <div class="container">
+                <!-- Home page-->
+                <div id="card-stats">
+                    <div class="row">
+                        <div class="col s12 m6 l6">
+                            <div class="padding" style="padding: 4% !important">
+                                <div class="card gradient-45deg-light-blue-cyan gradient-shadow min-height-100 white-text">
+                                    <div class="padding" style="padding: 4% !important">
+                                        <div class="col s3" style="text-align: left;">
+                                            <i class="material-icons background-round mt-5">attach_money</i>
+                                        </div>
+                                        <div class="col s9">
+                                            <h5 id="totalMoney" style="text-align: right;"></h5>
+                                            <p style="text-align: right;color: #f6f6f6">spent this month</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l6">
+                            <div class="padding" style="padding: 4% !important">
+                                <div class="card gradient-45deg-red-pink gradient-shadow min-height-100 white-text">
+                                    <div class="padding" style="padding: 4% !important">
+                                        <div class="col s3" style="text-align: left;">
+                                            <i class="material-icons background-round mt-5">attach_money</i>
+                                        </div>
+                                        <div class="col s9">
+                                            <h5 id="spentToday" style="text-align: right;"></h5>
+                                            <p style="text-align: right;color: #f6f6f6">spent today</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m6 l6 ">
+                            <div class="padding" style="padding: 4% ;padding-top: 0%;">
+                                <div id="table" class="z-depth-3 table1 hoverable">
+                                    <div class="padding" style="padding: 4% !important">
+                                        <table class="striped" style="font-family: " Lato ", sans-serif;">
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>Category</th>
+                                                    <th>Amount (INR)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m6 l6 ">
+                            <div class="padding" style="padding: 4%;padding-top: 0%;">
+                                <div id="reports" class="z-depth-3 hoverable">
+                                    <div class="padding" style="padding: 4% !important">
+                                        <canvas id="myChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expenses-->
+                <div id="expenses" style="display: none;">
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="" id="sortForm">
+                                <form id="sortExpenses" action="JavaScript:sortExpenses()">
+                                    <div class="padding" style="padding: 2%;">
+                                        <div class="row">
+                                            <div class="input-field col  s12">
+                                                <select required id="sortCategory" onchange="this.form.submit()">
+                                                    <option value="reset" selected>All</option>
+                                                    <option value="Entertainment">Entertainment</option>
+                                                    <option value="Meals">Meals</option>
+                                                    <option value="Grocery">Grocery</option>
+                                                    <option value="Transport">Transport</option>
+                                                    <option value="Others">Others</option>
+                                                </select>
+                                                <label>Sort by category</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="padding" style="padding: 1%;">
+                        <div class="row">
+                            <div class="col s12 m8 l8">
+                                <div id="table" class="z-depth-3 table2 hoverable">
+                                    <table style="font-family: " Lato ", sans-serif;">
+                                        <thead>
+                                        </thead>
+                                        <thead>
+                                            <tr>
+                                                <th style="margin-left: 5%;">Date</th>
+                                                <th>Category</th>
+                                                <th>Amount (INR)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reports page-->
+                <div id="reportsPage" style="display: none">
+                    <h5 style="color: #0D47A1;">Monthly Expense report (Category wise)</h5>
+                    <div class="row" id="Month">
+                        <div class="col s12 m4 l4 ">
+                            <div class="padding" style="padding: 2%;">
+                                <div class="input-field col  s12">
+                                    <select required id="MonthWiseReport" onchange="monthWisePlot()">
+                                        <option value="" disabled selected>Select the month</option>
+                                        <option value="January">January</option>
+                                        <option value="February">Febraury</option>
+                                    </select>
+                                    <label>only 2018</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m8 l8 ">
+                            <div class="padding" style="padding: 1%;">
+                                <canvas id="monthWise"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 style="color: #0D47A1;">Daily Expense Report (Category wise)</h5>
+                    <div class="row" id="Day">
+                        <div class="col s12 m4 l4 ">
+                            <div class="padding" style="padding: 2%;">
+                                <div class="input-field col s6">
+                                    <input type="text" id="dateReport" class="datepicker" onchange="dateWiseReport()" value="" required />
+                                    <label for="dateReport">Select Date</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m8 l8 ">
+                            <div class="padding" style="padding: 1%;">
+                                <canvas id="dayWise"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Remove modal-->
+        <div class="modal" id="deleteItem">
+            <div class="modal-content">
+                <h4>Remove item ?</h4>
+                <p>By clicking OK, you can remove this item.</p>
+                <button type="submit" onclick="" class="btn waves-effect waves-light modal-action modal-close" id="ok">Ok</button>
+            </div>
+        </div>
+
+        <!--float button-->
+        <div class="fixed-action-btn active" style="bottom: 50px; right: 19px;">
+            <a class="btn-floating modal-trigger btn-large gradient-45deg-light-blue-cyan gradient-shadow" href="#addExpense">
+            <i class="material-icons">add</i>
+          </a>
+        </div>
+        <div id="addExpense" class="modal">
+            <div class="padding" style="padding: 4% !important">
+                <div class="modal-content">
+                    <div class="row">
+                        <form class=" col s12 m8 l8" id="addExpenseForm">
+                            <h4>Add an expense</h4>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" id="date" class="datepicker" required>
+                                    <label for="date">Date</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="number" id="amount" required>
+                                    <label for="amount">Amount</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col m12 l12 s12">
+                                    <select required id="category">
+                                        <option value="" disabled selected>Category</option>
+                                        <option value="Entertainment">Entertainment</option>
+                                        <option value="Meals">Meals</option>
+                                        <option value="Grocery">Grocery</option>
+                                        <option value="Transport">Transport</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 m6 l6">
+                                    <button onclick="addData()" form="#addExpenseForm" class="btn waves-effect waves-light modal-action modal-close" type="submit" name="action" id="submit">Done
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="col hide-on-small-only m4 l4" id="upload">
+                            <img src="https://d2k5nsl2zxldvw.cloudfront.net/images/icons/emptystates/emptystate_expenses_02.svg" id="fileUpload" alt="upload">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript : firebase, jquery, materialize, moment and main-->
+    <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js'></script>
+    <script src="js/moment.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
