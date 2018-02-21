@@ -8,7 +8,7 @@ Expense Manager App
   Since i have used Google's firebase for database management, *working internet connection* is required to run the app.
   
 # How to use 
-  # Run index.html in browser
+   Run index.html in browser
   
   # Step 1
     - Sign up with your email.
