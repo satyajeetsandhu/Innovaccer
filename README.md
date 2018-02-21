@@ -39,3 +39,6 @@ Expense Manager App
  
  # Database
   - Firebase : For user authentification (sign in and sign up) and realtime database.
+  
+ ## Author 
+  - Satyajeet Sandhu
